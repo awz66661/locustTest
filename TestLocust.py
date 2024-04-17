@@ -8,7 +8,8 @@ class Tasks(FastHttpUser):
 
     @task
     def test_task(self):
-        self.client.get("/v3/weather/weatherInfo?city={{adcode}}&key=19d1f2b8c543ccf668f6364239ea836a")
+        #self.client.get("/v3/weather/weatherInfo?city={{adcode}}&key=19d1f2b8c543ccf668f6364239ea836a")
+        self.client.get("awz66661.icu")
 
 class MyCustomShape(LoadTestShape):
     use_common_options = True
@@ -27,7 +28,7 @@ class MyCustomShape(LoadTestShape):
         # 运行时间在 time_limit之内，则继续执行
         if run_time < self.time_limit:
             # user_count计算每10秒钟增加10个
-            user_count = 10*round(run_time, -1)
+            user_count = 100*round(run_time, -1)
             print(str(user_count)+">>>>>"+datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S.%f'))
             return (user_count, self.spawn_rate)
 
